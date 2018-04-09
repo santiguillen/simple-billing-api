@@ -1,13 +1,31 @@
 security:
+    encoders:
+        App\Entity\App\User:
+            algorithm: argon2i
+
     # https://symfony.com/doc/current/security.html#where-do-users-come-from-user-providers
     providers:
-        in_memory: { memory: ~ }
+        our_db_provider:
+            entity:
+                class: App\Entity\App\User
+                # property: username
+
+        # in_memory: { memory: ~ }
+
     firewalls:
         dev:
             pattern: ^/(_(profiler|wdt)|css|images|js)/
             security: false
+
+        oauth_token:
+            pattern:    ^/oauth/v2/token
+            security:   false
+
         main:
             anonymous: true
+            pattern:    ^/
+            http_basic: ~
+            provider: our_db_provider
 
             # activate different ways to authenticate
 

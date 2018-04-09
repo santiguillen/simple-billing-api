@@ -27,6 +27,7 @@ final class AddPaginationHeaders implements EventSubscriberInterface
                 'Pagination-Current-Page'   => $data->getCurrentPage(),
                 'Pagination-Last-Page'      => $data->getLastPage(),
             ]);
+
         }
     }
 

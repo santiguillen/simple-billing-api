@@ -47,6 +47,31 @@ api_platform:
     # Enable the docs.
     enable_docs: true
 
+    oauth:
+        # To enable or disable oauth.
+        enabled: true
+
+        # The oauth client id.
+        clientId: 'NtTh6z54N8Jbv4RX'
+
+        # The oauth client secret.
+        clientSecret: 'nGZk83557PbRdPsF'
+
+        # The oauth type.
+        type: 'oauth2'
+
+        # The oauth flow grant type.
+        flow: 'password'
+
+        # The oauth token url.
+        tokenUrl: '/oauth/v2/token'
+
+        # The oauth authentication url.
+        authorizationUrl: '/oauth/v2/auth'
+
+        # The oauth scopes.
+        scopes: []
+
     mapping:
         paths: ['%kernel.project_dir%/src/Entity']
 
